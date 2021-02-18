@@ -1,0 +1,17 @@
+说明
+(1)cpp仅用于参考流程
+(2)model文件夹默认置于可执行程序的当前路径，里面有模型文件，路径已写死不可修改
+
+接口说明:
+上传接口:
+http://localhost:8000/CBIR/upload?urltxt=./2.txt&dbDir=/etc/&batch=0
+参数:
+urltxt包含url的文件路径
+dbDir有存放的目录
+batch=0或者1 0:表示调用单个保存接口 1:表示调用批量保存接口  默认为1
+查询接口:
+http://localhost:8000/CBIR/query?inputType=0&topN=10&input=/home/hww
+参数:
+inputType对应本地路径(0)或者url(1)
+topN前面n条
+inpu要查询的本地路径或者远程url

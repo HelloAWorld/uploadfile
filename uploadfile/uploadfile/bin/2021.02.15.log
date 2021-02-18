@@ -1,0 +1,10 @@
+[2021.02.15] [14:50:20] [LOG_INFO ] ------------------ LOG SYSTEM START ------------------
+
+[2021.02.15] [14:50:20] [LOG_INFO ] ImplIModule !! 
+
+[2021.02.15] [14:50:20] [LOG_INFO ] loadfeatDB2Map(featdbfile) successful !! 
+
+[2021.02.15] [14:51:48] [LOG_INFO ] addUrlToDB: urls-size=8
+
+[2021.02.15] [14:51:48] [LOG_INFO ] search url: i=0, url=https://goss1.cfp.cn/creative/vcg/800/new/VCG211266426873-JBS.jpg
+
