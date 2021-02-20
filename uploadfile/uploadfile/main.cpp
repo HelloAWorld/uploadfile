@@ -10,8 +10,6 @@
 
 using namespace std;
 
-
-
 IModule* machine;
 
 typedef IModule* (*PInitialModule)(std::string featdbfile);
