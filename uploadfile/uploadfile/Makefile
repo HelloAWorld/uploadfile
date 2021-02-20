@@ -1,23 +1,23 @@
 #定义变量，使用变量:$(变量名)
 CC=g++
 #定义变量OBJS,表示将原文件中所有以.cpp结尾的文件替换成以.o结尾，即将.cpp源文件编译成.o文件
-objects = main.o httphandler.o
+objects = main.o httphandler.o MessageHead.o ThreadPool.o HttpServer.o
 objectsc = mongoose.o 
 #包含目录
 include_dirs = -Iinclude -I.
 #cxxflags
-CXXFLAGS = $(include_dirs) -m64 -g -DMG_ENABLE_SOCKETPAIR=1
+CXXFLAGS = $(include_dirs) -m64 -g -DMG_ENABLE_SOCKETPAIR=1 -std=c++11
 EXEC=uploadfile
 
 #依赖库
-libs= -llibCBIR_linux64.so -llibcurl.so.4 -llibcurl.so.4.3.0 -llibHyCvUtils.so -lpthread
+libs= -lCBIR_linux64 -lHyCvUtils -lpthread
 #依赖库目录
-LDDIR+=-L/mnt/d/code/work/uploadfile/uploadfile/uploadfile/lib 
+LDDIR+=-L./lib 
 #执行所有
 all: $(EXEC)
 
 $(EXEC):$(objects) $(objectsc)
-		$(CC) -o $@ $(objects)  $(objectsc) -Wall -Wfatal-errors $(CXXFLAGS) -ldl -lpthread
+		$(CC) -o $@ $(objects)  $(objectsc) -Wall -Wfatal-errors $(CXXFLAGS) -ldl -lpthread $(LDDIR) $(libs)
 		cp uploadfile ./bin/uploadfile
 
 #表示我的.o文件来自于.cpp文件
